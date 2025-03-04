@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <text class="title">今天的心情如何？</text>
+    <text class="subtitle">让我们一起记录这一刻的感受</text>
+  </view>
+
+  <view class="mood-grid">
+    <view class="mood-item {{selectedMood === '开心' ? 'selected' : ''}}" bindtap="selectMood" data-mood="开心">
+      <image src="/assets/icons/happy.png" mode="aspectFit"></image>
+      <text>开心</text>
+    </view>
+    <view class="mood-item {{selectedMood === '平静' ? 'selected' : ''}}" bindtap="selectMood" data-mood="平静">
+      <image src="/assets/icons/calm.png" mode="aspectFit"></image>
+      <text>平静</text>
+    </view>
+    <view class="mood-item {{selectedMood === '疲惫' ? 'selected' : ''}}" bindtap="selectMood" data-mood="疲惫">
+      <image src="/assets/icons/tired.png" mode="aspectFit"></image>
+      <text>疲惫</text>
+    </view>
+    <view class="mood-item {{selectedMood === '焦虑' ? 'selected' : ''}}" bindtap="selectMood" data-mood="焦虑">
+      <image src="/assets/icons/anxious.png" mode="aspectFit"></image>
+      <text>焦虑</text>
+    </view>
+  </view>
+
+  <view class="form-container">
+    <textarea class="mood-notes" placeholder="记录一下当下的想法..." value="{{notes}}" bindinput="onNotesInput"></textarea>
+    <button class="submit-btn" bindtap="submitMoodRecord">记录此刻</button>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header">
+    <text class="title">心情记录</text>
+  </view>
+
+  <view class="records-list">
+    <block wx:for="{{records}}" wx:key="timestamp">
+      <view class="record-item">
+        <view class="record-header">
+          <text class="mood">{{item.mood}}</text>
+          <text class="time">{{item.formattedTime}}</text>
+        </view>
+        <view class="notes" wx:if="{{item.notes}}">
+          {{item.notes}}
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-state" wx:if="{{!records.length}}">
+    <image src="/assets/icons/empty.png" mode="aspectFit"></image>
+    <text>还没有心情记录哦</text>
+  </view>
+</view>
