@@ -1,0 +1,36 @@
+<view class="login-container">
+  <view class="header">
+    <image class="logo" src="/assets/icons/mood.png" mode="aspectFit"></image>
+    <text class="title">心情觉察</text>
+  </view>
+  
+  <view class="agreement">
+    <checkbox-group bindchange="onAgreeChange">
+      <checkbox value="agree" checked="{{isAgree}}">同意</checkbox>
+    </checkbox-group>
+    <text class="agreement-link" bindtap="showPrivacyPolicy">《用户协议和隐私政策》</text>
+  </view>
+
+  <view class="login-box">
+    <button class="login-btn" bindtap="getUserProfile">
+      微信登录
+    </button>
+  </view>
+
+  <view class="tips">
+    登录后即可记录您的心情变化
+  </view>
+</view>
+
+<!-- 隐私政策弹窗 -->
+<view class="privacy-modal" wx:if="{{showPrivacy}}">
+  <view class="modal-content">
+    <view class="modal-title">用户协议和隐私政策</view>
+    <scroll-view scroll-y class="modal-text">
+      <text>{{privacyText}}</text>
+    </scroll-view>
+    <view class="modal-btns">
+      <button bindtap="closePrivacy">关闭</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="date-picker">
+    <picker mode="date" value="{{date}}" bindchange="onDateChange">
+      <view class="picker-content">
+        {{date}} <text class="picker-text">换个日期看看</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="records-timeline" wx:if="{{dailyRecords.length > 0}}">
+    <view class="timeline-title">今日心情小日记 ʕ•ᴥ•ʔ</view>
+    <view class="timeline-item" wx:for="{{dailyRecords}}" wx:key="timestamp">
+      <view class="time">{{item.formattedTime}}</view>
+      <view class="mood-card">
+        <view class="mood-text">{{item.moodText}}</view>
+        <view class="mood-note">{{item.note}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="analysis-btn" wx:if="{{dailyRecords.length > 0 && (!isAnalyzing)}}">
+    <button class="cute-btn" bindtap="onAnalysisTap">
+      {{analysis ? '重新生成分析' : '生成分析报告'}}
+    </button>
+    <image class="btn-icon" src="/assets/icons/analysis-icon.png"></image>
+    {{analysis ? '重新分析今天的心情~' : '开始分析今天的心情吧~'}}
+  </view>
+
+  <view class="analysis-section" wx:if="{{analysis || isAnalyzing}}">
+    <view class="section-title">
+      <image class="title-icon" src="/assets/icons/heart.png"></image>
+      暖心小助手的分析报告
+    </view>
+    <view class="progress-bar" wx:if="{{isAnalyzing}}">
+      <view class="progress-inner" style="width: {{progressValue}}%">
+        <view class="progress-dot"></view>
+      </view>
+    </view>
+    <rich-text class="analysis-content" nodes="{{analysis}}" wx:if="{{analysis}}"></rich-text>
+  </view>
+
+  <view class="empty-state" wx:if="{{dailyRecords.length === 0}}">
+    <image src="/assets/icons/empty.png"></image>
+    <text>今天还没有记录心情呢 (｡･ω･｡)</text>
+  </view>
+</view>

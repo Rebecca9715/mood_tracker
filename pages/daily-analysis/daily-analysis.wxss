@@ -1,0 +1,253 @@
+.container {
+  padding: 30rpx;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.date-picker {
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.picker-content {
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker-text {
+  font-size: 24rpx;
+  color: #7B68EE;
+  margin-left: 20rpx;
+  border: 1rpx solid #7B68EE;
+  padding: 4rpx 12rpx;
+  border-radius: 20rpx;
+}
+
+.records-timeline {
+  margin-bottom: 40rpx;
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.timeline-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 20rpx;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 100rpx;
+  top: 0;
+  bottom: -30rpx;
+  width: 2rpx;
+  background: #eee;
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.time {
+  width: 100rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mood-card {
+  flex: 1;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin-left: 40rpx;
+  border: 1rpx solid #eee;
+  position: relative;
+}
+
+.mood-text {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  color: #7B68EE;
+}
+
+.mood-note {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.analysis-section {
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  width: 6rpx;
+  height: 32rpx;
+  background: #7B68EE;
+  margin-right: 16rpx;
+  border-radius: 3rpx;
+}
+
+.analysis-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.8;
+  white-space: normal;
+  word-break: break-word;
+  padding: 20rpx 0;
+}
+
+/* rich-text样式 */
+.analysis-content .divider {
+  height: 2rpx;
+  background: linear-gradient(to right, transparent, #FFB6C1, transparent);
+  margin: 30rpx 0;
+  display: block;
+}
+
+.analysis-content b {
+  color: #FF69B4;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10rpx 0;
+}
+
+.analysis-content .task-title {
+  color: #FF69B4;
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  margin: 20rpx 0;
+  text-align: center;
+}
+
+.cute-btn {
+  background: #FFB6C1;
+  color: #fff;
+  border-radius: 30rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 40rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255,182,193,0.3);
+  transition: all 0.3s;
+}
+
+.cute-btn:active {
+  transform: scale(0.98);
+}
+
+.btn-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.title-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.timeline-title {
+  font-size: 34rpx;
+  color: #FF69B4;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx 0;
+}
+
+.empty-state image {
+  width: 240rpx;
+  height: 240rpx;
+  margin-bottom: 30rpx;
+}
+
+.empty-state text {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.divider {
+  height: 2rpx;
+  background: linear-gradient(to right, transparent, #FFB6C1, transparent);
+  margin: 30rpx 0;
+}
+
+.task-title {
+  color: #FF69B4;
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  margin: 20rpx 0;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #FFB6C1, #FF69B4);
+  border-radius: 3px;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  background: #FF1493;
+  border-radius: 50%;
+  position: absolute;
+  right: -5px;
+  top: -2px;
+  box-shadow: 0 0 5px rgba(255, 20, 147, 0.5);
+}

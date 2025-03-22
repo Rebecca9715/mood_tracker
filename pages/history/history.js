@@ -1,31 +1,74 @@
+const auth = require('../../utils/auth.js')
+
 Page({
   data: {
     records: []
   },
 
   onShow() {
-    this.loadRecords();
+    if (!auth.checkLogin()) {
+      auth.redirectToLogin()
+      return
+    }
+    this.loadRecords()
+  },
+
+  onHide() {
+    // 页面隐藏时清空数据，避免闪烁
+    this.setData({
+      records: []
+    })
   },
 
   loadRecords() {
     const records = wx.getStorageSync('moodRecords') || [];
-    
-    const formattedRecords = records.map(record => ({
-      ...record,
-      formattedTime: this.formatTime(record.timestamp)
-    }));
-
-    this.setData({ records: formattedRecords });
+    this.setData({
+      records: records.map(record => ({
+        ...record,
+        formattedTime: this.formatTime(record.timestamp)
+      }))
+    });
   },
 
   formatTime(timestamp) {
     const date = new Date(timestamp);
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+  },
 
-    return `${year}-${month}-${day} ${hours}:${minutes}`;
+  showDetail(e) {
+    const record = e.currentTarget.dataset.record;
+    wx.navigateTo({
+      url: `/pages/detail/detail?record=${encodeURIComponent(JSON.stringify(record))}`,
+      fail: (err) => {
+        console.error('页面跳转失败：', err);
+        wx.showToast({
+          title: '页面跳转失败',
+          icon: 'none'
+        });
+      }
+    });
+  },
+
+  deleteRecord(e) {
+    const index = e.currentTarget.dataset.index;
+    wx.showModal({
+      title: '确认删除',
+      content: '确定要删除这条记录吗？',
+      success: (res) => {
+        if (res.confirm) {
+          const records = wx.getStorageSync('moodRecords') || [];
+          records.splice(index, 1);
+          wx.setStorageSync('moodRecords', records);
+          
+          // 重新加载并格式化记录
+          this.loadRecords();
+          
+          wx.showToast({
+            title: '删除成功',
+            icon: 'success'
+          });
+        }
+      }
+    });
   }
 });

@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="detail-card">
+    <view class="detail-header">
+      <text class="mood-text">{{record.moodText}}</text>
+      <text class="detail-time">{{record.formattedTime}}</text>
+    </view>
+    
+    <view class="detail-content">
+      <view class="section-title">我的想法</view>
+      <view class="note-content">{{record.note}}</view>
+    </view>
+
+    <view class="ai-feedback" wx:if="{{record.aiResponse}}">
+      <view class="section-title">暖心小助手</view>
+      <rich-text class="ai-content" nodes="{{record.aiResponse}}"></rich-text>
+    </view>
+
+    <view class="music-player" wx:if="{{record.songInfo}}">
+      <view class="music-info">
+        <text class="song-name">{{record.songInfo.name}}</text>
+        <text class="song-artist">{{record.songInfo.artist}}</text>
+      </view>
+      <button class="play-btn {{isPlaying ? 'playing' : ''}}" bindtap="playMusic">
+        <image class="play-icon" src="{{isPlaying ? '/images/pause.png' : '/images/play.png'}}"></image>
+      </button>
+    </view>
+  </view>
+</view>

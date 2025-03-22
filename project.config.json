@@ -1,6 +1,6 @@
 {
-  "description": "项目配置文件",
   "miniprogramRoot": "",
+  "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -36,10 +36,35 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "appid": "wx4ce0f239dceb24c8",
-  "projectname": "mood_tracker",
+  "appid": "wx3985642be4e8125d",
+  "projectname": "quickstart-wx-cloud",
   "libVersion": "2.20.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide"
+        }
+      ]
+    }
+  },
   "compileType": "miniprogram",
+  "srcMiniprogramRoot": "miniprogram/",
   "packOptions": {
     "ignore": [],
     "include": []
@@ -47,6 +72,5 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  },
-  "condition": {}
+  }
 }

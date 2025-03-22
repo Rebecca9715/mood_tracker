@@ -1,0 +1,100 @@
+.login-container {
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 100rpx;
+  text-align: center;
+}
+
+.logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.login-box {
+  width: 100%;
+  margin-top: 80rpx;
+}
+
+.login-btn, .phone-btn {
+  width: 80% !important;
+  margin-bottom: 30rpx;
+  border-radius: 40rpx;
+}
+
+.login-btn {
+  background: #7B68EE;
+  color: white;
+}
+
+.phone-btn {
+  background: #fff;
+  color: #7B68EE;
+  border: 1px solid #7B68EE;
+}
+
+.tips {
+  margin-top: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.agreement {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.agreement-link {
+  color: #7B68EE;
+  margin-left: 10rpx;
+}
+
+.privacy-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 80%;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.modal-text {
+  height: 600rpx;
+  margin: 20rpx 0;
+}
+
+.modal-btns {
+  margin-top: 20rpx;
+  text-align: center;
+}

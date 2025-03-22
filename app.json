@@ -1,7 +1,15 @@
 {
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
+  "lazyCodeLoading": "requiredComponents",
   "pages": [
+    "pages/login/login",
     "pages/index/index",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/detail/detail",
+    "pages/daily-analysis/daily-analysis"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +33,23 @@
         "text": "记录",
         "iconPath": "/assets/icons/history.png",
         "selectedIconPath": "/assets/icons/history-active.png"
+      },
+      {
+        "pagePath": "pages/daily-analysis/daily-analysis",
+        "text": "分析",
+        "iconPath": "/assets/icons/analysis.png",
+        "selectedIconPath": "/assets/icons/analysis-active.png"
       }
     ]
-  }
+  },
+  "permission": {
+    "scope.userInfo": {
+      "desc": "您的个人信息将用于记录心情数据"
+    },
+    "scope.phoneNumber": {
+      "desc": "您的手机号码将用于账号登录"
+    }
+  },
+  "enableShareAppMessage": true,
+  "enableShareTimeline": true
 }
