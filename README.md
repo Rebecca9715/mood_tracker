@@ -18,7 +18,10 @@
 
 ## 项目结构
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 mood_tracker_mini/
 ├── pages/                # 页面文件
 │   ├── index/           # 首页
@@ -40,4 +43,8 @@ Rebecca Wang
 
 ## 许可证
 
+<<<<<<< Updated upstream
 MIT License
+=======
+MIT License
+>>>>>>> Stashed changes
