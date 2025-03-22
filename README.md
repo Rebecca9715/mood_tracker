@@ -17,3 +17,27 @@
 - 本地数据存储
 
 ## 项目结构
+
+
+mood_tracker_mini/
+├── pages/                # 页面文件
+│   ├── index/           # 首页
+│   ├── detail/          # 详情页
+│   ├── statistics/      # 统计页
+│   └── daily-analysis/  # 每日分析页
+├── utils/               # 工具函数
+├── components/          # 公共组件
+└── assets/             # 静态资源
+
+## 开发环境
+
+- 微信开发者工具
+- Node.js >= 14.0.0
+
+## 作者
+
+Rebecca Wang
+
+## 许可证
+
+MIT License
